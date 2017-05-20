@@ -1,0 +1,15 @@
+{
+  "name": "mt-download",
+  "version": "1.0.0",
+  "description": "Multithreaded downloads",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.81.0",
+    "tmp": "0.0.31"
+  }
+}
