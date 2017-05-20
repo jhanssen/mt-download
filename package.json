@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "request": "^2.81.0",
-    "tmp": "0.0.31"
+    "tmp": "0.0.31",
+    "urldecode": "^1.0.1"
   }
 }
