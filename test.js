@@ -4,7 +4,7 @@ const mtdl = require("./index");
 //let url = "http://releases.ubuntu.com/16.04/SHA256SUMS.gpg";
 let url = "http://releases.ubuntu.com/16.04/ubuntu-16.04.2-server-i386.template";
 let ctrl;
-mtdl.prepare({ url: url, path: "/Users/jhanssen/dev/mt-download", threads: 8 })
+mtdl.prepare({ url: url, path: ".", threads: 8 })
     .then((obj) => {
         ctrl = obj;
         ctrl.on("state", (s) => {
