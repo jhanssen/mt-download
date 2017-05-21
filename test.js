@@ -1,4 +1,4 @@
-/*global require,process,setTimeout*/
+/*global require,process,setTimeout,setInterval*/
 
 const mtdl = require("./index");
 //let url = "http://releases.ubuntu.com/16.04/SHA256SUMS.gpg";
@@ -31,3 +31,19 @@ process.on('uncaughtException', function (err) {
 process.on("exit", function(code) {
     console.log("about to exit", code, ctrl);
 });
+
+let paused = false;
+function togglePause() {
+    if (ctrl) {
+        if (!paused) {
+            console.log("pausing");
+            ctrl.stop();
+            paused = true;
+        } else {
+            console.log("resuming");
+            ctrl.start();
+            paused = false;
+        }
+    }
+}
+setInterval(togglePause, 2000);
