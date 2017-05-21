@@ -4,12 +4,18 @@ const mtdl = require("./index");
 //let url = "http://releases.ubuntu.com/16.04/SHA256SUMS.gpg";
 let url = "http://releases.ubuntu.com/16.04/ubuntu-16.04.2-server-i386.template";
 let ctrl;
-mtdl({ url: url, path: "/Users/jhanssen/dev/mt-download", threads: 8 })
+mtdl.prepare({ url: url, path: "/Users/jhanssen/dev/mt-download", threads: 8 })
     .then((obj) => {
         ctrl = obj;
-        ctrl.on("finished", () => {
-            console.log("finito");
-            //process.exit();
+        ctrl.on("state", (s) => {
+            console.log("got state", s);
+            if (s == mtdl.State.Finished) {
+                console.log("finito");
+                //process.exit();
+            }
+        });
+        ctrl.on("progress", (perc) => {
+            console.log("progress", perc);
         });
         ctrl.start();
         console.log(ctrl);
