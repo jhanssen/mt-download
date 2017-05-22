@@ -1,6 +1,6 @@
 {
   "name": "mt-download",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Multithreaded http downloads",
   "main": "index.js",
   "scripts": {
